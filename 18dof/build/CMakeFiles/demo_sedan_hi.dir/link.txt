@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/demo_sedan_hi.dir/demos/Sedan/demo_sedan_hi.cpp.o CMakeFiles/demo_sedan_hi.dir/dof18.cpp.o CMakeFiles/demo_sedan_hi.dir/home/ishaan/low-fidelity-dynamic-models/wheeled_vehicle_models/utils/utils.cpp.o CMakeFiles/demo_sedan_hi.dir/dof18_halfImplicit.cpp.o -o demo_sedan_hi 
