@@ -28,4 +28,10 @@ class VehicleParam:
         self.throttleMod = throttleMod
         self.driveType = driveType
         self.whichWheels = whichWheels
+
+
+    
+    
        
+    def to_array(self):
+        return jnp.array([self.a, self.b, self.h, self.m, self.jz, self.jx, self.jxz, self.cf, self.cr, self.muf, self.mur, self.hrcf, self.hrcr, self.krof, self.kror, self.brof, self.bror, float(self.nonLinearSteer), self.maxSteer, self.crankInertia, float(self.tcbool), self.maxBrakeTorque, self.c1, self.c0, self.step, self.throttleMod, self.driveType, self.whichWheels])

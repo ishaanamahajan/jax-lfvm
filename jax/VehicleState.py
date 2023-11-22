@@ -17,3 +17,7 @@ class VehicleState:
         self.tor = tor
         self.crankOmega = crankOmega
         self.current_gr = current_gr
+
+
+    def to_array(self):
+        return jnp.array([self.x, self.y, self.dx, self.dy, self.u, self.v, self.psi, self.wz, self.phi, self.wx, self.udot, self.vdot, self.wxdot, self.wzdot, self.tor, self.crankOmega, self.current_gr])

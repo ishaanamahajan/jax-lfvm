@@ -1,5 +1,6 @@
 import jax
 import jax.numpy as jnp
+from jax import grad, jit, vmap
 from vehicle_state import VehicleState
 from vehicle_param import VehicleParam
 
@@ -48,5 +49,12 @@ def computeVehRHS(v_states, v_params, fx, fy):
     v_states.dy = v_states.u * jnp.sin(v_states.psi) + v_states.v * jnp.cos(v_states.psi)
 
     return v_states
+
+def grad_computeVehRHS(v_states, v_params, fx, fy):
+
+     fx = jnp.array(fx)
+
+ 
+    return grad(computeVehRHS, argnums=(0,1,2,3))(v_states, v_params, fx, fy)
 
 
