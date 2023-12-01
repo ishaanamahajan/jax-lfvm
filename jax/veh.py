@@ -51,10 +51,16 @@ def computeVehRHS(v_states, v_params, fx, fy):
     return v_states
 
 def grad_computeVehRHS(v_states, v_params, fx, fy):
+    # Convert fx and fy to JAX numpy arrays if they are not already
+    fx = jnp.array(fx)
+    fy = jnp.array(fy)
 
-     fx = jnp.array(fx)
+    # Compute gradients with respect to each argument
+    grad_v_states = grad(computeVehRHS, argnums=0)(v_states, v_params, fx, fy)
+    grad_v_params = grad(computeVehRHS, argnums=1)(v_states, v_params, fx, fy)
+    grad_fx = grad(computeVehRHS, argnums=2)(v_states, v_params, fx, fy)
+    grad_fy = grad(computeVehRHS, argnums=3)(v_states, v_params, fx, fy)
 
- 
-    return grad(computeVehRHS, argnums=(0,1,2,3))(v_states, v_params, fx, fy)
+    return grad_v_states, grad_v_params, grad_fx, grad_fy
 
 
