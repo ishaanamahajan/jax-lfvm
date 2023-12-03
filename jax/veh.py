@@ -64,3 +64,7 @@ def grad_computeVehRHS(v_states, v_params, fx, fy):
     return grad_v_states, grad_v_params, grad_fx, grad_fy
 
 
+batched_computeVehRHS = vmap(computeVehRHS, in_axes=(0, None, 0, 0))
+batched_grad_computeVehRHS = vmap(grad_computeVehRHS, in_axes=(0, None, 0, 0))
+
+
