@@ -50,7 +50,7 @@ def integrate_any(v_st, v_params, controls):
 def main():
     # Initialize driver data
     m_data = []
-    driver_input(m_data, 'inputs/acc3.txt')  # Replace with your file path
+    driver_input(m_data, 'jax/inputs/acc3.txt')  # Replace with your file path
 
     # Vehicle parameters and initial state
     v_params = VehParam(step=0.001, l=2.5, R=0.3, gamma=1.0, tau0=100, omega0=100, c1=0.5, c0=0.1, I=1500, steerMap=1.0)

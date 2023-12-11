@@ -57,14 +57,13 @@ def main():
     
     end_time = time.time()
 
+    
     duration_sec = (end_time - start_time) * 1000  # Convert to milliseconds
     print(f"Parallel Simulation Duration: {duration_sec} ms")
 
-    #do AD 
+    
     final_states = [array_to_veh_states(state) for state in states]
-    print(final_states)
+    #print(final_states)
 
 if __name__ == "__main__":
     main()
-
-
